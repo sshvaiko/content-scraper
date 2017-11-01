@@ -7,6 +7,7 @@ const Xray = require("x-ray")
 
 // x-ray initialization
 const x = Xray();
+console.log(config.url);
 
 // start from the main page
 x(config.url, '.products li', [{
@@ -20,8 +21,8 @@ x(config.url, '.products li', [{
 }])(function (error, data) {
     if(error) {
       logger.error(error);
-      return;
+    } else {
+      // save in CSV file
+      csv.save(data);
     }
-    // save in CSV file
-    csv.save(data);
 });

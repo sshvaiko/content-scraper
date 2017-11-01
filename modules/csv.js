@@ -19,11 +19,11 @@ function save(data) {
   // generate new object (clean because it has "productInfo")
   let result = new Array();
 
-  for(prop in data) {
+  for(let prop in data) {
       // temp object to save data
       let productInfo = {};
       productInfo.url = data[prop].url;
-      for(itemProp in data[prop].productInfo) {
+      for(let itemProp in data[prop].productInfo) {
         productInfo[itemProp] = data[prop].productInfo[itemProp];
       }
 
