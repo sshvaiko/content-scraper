@@ -1,0 +1,17 @@
+{
+  "name": "content-scraper",
+  "version": "0.0.1",
+  "description": "Simple content scraper",
+  "main": "scraper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stan Shvaika",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "json2csv": "^3.11.5",
+    "request": "^2.83.0",
+    "x-ray": "^2.3.2"
+  }
+}
