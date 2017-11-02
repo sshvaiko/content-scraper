@@ -7,7 +7,7 @@ const logger = require('./logger');
 
 function save(data) {
   // create folder for results if doesn't exist
-  if (!fs.existsSync(config.folder)){
+  if (!fs.existsSync(config.folder)) {
     fs.mkdirSync(config.folder);
   }
 
@@ -19,20 +19,27 @@ function save(data) {
   // generate new object (clean because it has "productInfo")
   let result = new Array();
 
-  for(let prop in data) {
-      // temp object to save data
-      let productInfo = {};
-      productInfo.url = data[prop].url;
-      for(let itemProp in data[prop].productInfo) {
-        productInfo[itemProp] = data[prop].productInfo[itemProp];
-      }
+  for (let prop in data) {
+    // temp object to save data
+    let productInfo = {};
+    for (let itemProp in data[prop].productInfo) {
+      productInfo[itemProp] = data[prop].productInfo[itemProp];
+    }
+    productInfo.URL = data[prop].URL;
 
-      // add to result
-      result.push(productInfo);
+    // generate date
+    let date = new Date();
+    productInfo.Time = date.toString();
+
+    // add to result
+    result.push(productInfo);
   }
 
   // generate csv
-  let csv = json2csv({ data: result, fields: config.fields });
+  let csv = json2csv({
+    data: result,
+    fields: config.fields
+  });
 
   // save
   fs.writeFile(config.folder + fileName, csv, (error) => {

@@ -2,7 +2,7 @@ const config = {
   url: 'http://shirts4mike.com/shirts.php',
   folder: './data/',
   error: './scraper-error.log',
-  fields: ['url', 'price', 'title', 'image']
+  fields: ['Title', 'Price', 'ImageURL', 'URL', 'Time']
 }
 
 module.exports = config;
