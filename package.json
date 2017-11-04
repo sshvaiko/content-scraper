@@ -12,7 +12,6 @@
   "dependencies": {
     "colors": "^1.1.2",
     "json2csv": "^3.11.5",
-    "request": "^2.83.0",
     "x-ray": "^2.3.2"
   }
 }
